@@ -37,7 +37,7 @@ void logInit(int level, std::ostream& fout)
 
     g_debug_level = level;
 
-	appender = new log4cpp::OstreamAppender("default", &fout);
+    appender = new log4cpp::OstreamAppender("default", &fout);
 
     log4cpp::PatternLayout* playout = new log4cpp::PatternLayout();
     playout->setConversionPattern("[%d{%Y-%m-%d %H:%M:%S:%l}]%p: %m%n");
@@ -46,11 +46,11 @@ void logInit(int level, std::ostream& fout)
     appender->setLayout(playout);
 	
     g_logger = &log4cpp::Category::getRoot();
-	g_logger->setPriority(log4cpp::Priority::DEBUG);
-	g_logger->setAppender(appender);
+    g_logger->setPriority(log4cpp::Priority::DEBUG);
+    g_logger->setAppender(appender);
 }
 
 void logSetDbgLevel(int level)
 {
-	g_debug_level = level;
+    g_debug_level = level;
 }
